@@ -295,7 +295,7 @@ footer b{color:var(--fg)}
 </section>
 
 <section class="sec" id="gemas"><div class="wrap">
-  <div class="sec-h"><div class="eyebrow">Gemas e recursos</div><h2>Gemas e Full Bank</h2><p id="gemasTxt">Escolha a faixa da sua conta e a quantidade, cole a localização do castelo e mande o pedido pronto no WhatsApp. Pagamento via Pix e entrega em guilda pública.</p></div>
+  <div class="sec-h"><div class="eyebrow">Gemas e recursos</div><h2>Gemas e Full Bank</h2><p id="gemasTxt">Gemas: escolha a faixa da sua conta e a quantidade e peça direto no WhatsApp. Full Bank e Quase Full: cole a localização do castelo e mande o pedido pronto no WhatsApp. Pagamento via Pix.</p></div>
   <div class="cols2">
       <div class="panel">
         <h3>Gemas · de 100K em 100K</h3><p class="note">Entrega em guilda pública. Mande o print da localização e o pedido.</p>
@@ -607,7 +607,7 @@ function stepper(menos, mais, out, min, max, passo, fmt, onChange){
 // ===== Compra direto no site =====
 // MODO "whatsapp": o pedido vai pronto para o WhatsApp. MODO "pix": checkout InfinitePay (precisa do servidor, ainda não ligado).
 const MODO = "whatsapp";
-if(MODO==="pix"){ $("gemasTxt").textContent="Escolha a faixa da sua conta e a quantidade, cole a localização do castelo e pague com Pix aqui mesmo. A entrega em guilda pública começa sozinha assim que o pagamento é confirmado."; $("cPagar").textContent="Pagar com Pix"; $("cNota").innerHTML="Pagamento <b>somente via Pix</b>. A entrega começa sozinha assim que o Pix é confirmado."; }
+if(MODO==="pix"){ $("gemasTxt").textContent="Gemas: escolha a faixa da sua conta e a quantidade e peça direto no WhatsApp. Full Bank e Quase Full: cole a localização do castelo e pague com Pix aqui mesmo; a entrega em guilda pública começa sozinha assim que o pagamento é confirmado."; $("cPagar").textContent="Pagar com Pix"; $("cNota").innerHTML="Pagamento <b>somente via Pix</b>. A entrega começa sozinha assim que o Pix é confirmado."; }
 const LOC_RE = /^\s*\[([^\]]+)\]\s*(.+?)\s+K:(\d+)\s+X:(\d+)\s+Y:(\d+)\s*$/;
 let compraAtual = null;
 function poeCompra(slot, pedido){
@@ -659,7 +659,7 @@ function waBtnTxt(texto, rotulo){const w=el("a","btn wa"); w.href=waLink(texto);
     let qtd; const faixa=segmento($(px+"Faixa"), faixas.map(f=>f.replace("Poder ","")), ()=>calc());
     function calc(){const f=faixas[faixa()], k=qtd.get(), total=k/passo*preco(f), brinde=brindeK && k>=brindeK;
       $(px+"Total").textContent=R(total); $(px+"Obs").textContent=R(preco(f))+" a cada "+nomeUnid+(brinde?" · + Full Bank de brinde":"");
-      poeCompra($(px+"Wa"), {titulo: fmtQ(k)+" de gemas"+(brinde?" + Full Bank de brinde":""), detalhe: "Conta com "+f.replace("Poder ","poder "), total});}
+      poeWa($(px+"Wa"), "Oi! Quero comprar "+fmtQ(k)+" de gemas"+(brinde?" (+ Full Bank de brinde)":"")+".\n• Conta com "+f.replace("Poder ","poder ")+"\n• Total: "+R(total), "Pedir no WhatsApp");}
     qtd=stepper($(px+"Menos"),$(px+"Mais"),$(px+"Qtd"),min,max,passo,fmtQ,calc); qtd.upd();
   }
   calculadora("g", p100, 100, 900, 100, "100K");
