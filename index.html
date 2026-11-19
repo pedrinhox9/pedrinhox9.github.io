@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pedrinho X9</title>
+<meta name="description" content="Contas de Lords Mobile com fotos e bônus conferidos, gemas, Full Bank, Falcon Bot e Bot Farm. Atendimento pelo WhatsApp.">
+<link rel="icon" href="img/icone.png">
+<link rel="apple-touch-icon" href="img/icone.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pedrinho X9">
+<meta property="og:title" content="Pedrinho X9 · Contas e recursos de Lords Mobile">
+<meta property="og:description" content="Contas de Lords Mobile com fotos e bônus conferidos, gemas, Full Bank, Falcon Bot e Bot Farm. Atendimento pelo WhatsApp.">
+<meta property="og:url" content="https://pedrinhox9.github.io/">
+<meta property="og:image" content="https://pedrinhox9.github.io/img/previa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: topo com logo + chamada e botão de WhatsApp; barra de busca fixa; grade de cartões com galeria; álbum completo abre por cima, dentro do site */
+:root{
+  --bg:#f4f5f9; --panel:#ffffff; --fg:#141826; --muted:#5b6276; --line:#dfe2ea;
+  --gold:#a86d14; --gold-soft:#fbf0dc; --wa:#1f9d55; --wa-fg:#fff;
+  --sold:#8b90a0; --chip:#eef0f6; --shade:rgba(10,12,22,.62);
+  --red:#de3412; --blue:#2448e0; --hero:#ffffff;
+  --f-display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --f-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1120; --panel:#161a2b; --fg:#eceef6; --muted:#9aa1b8; --line:#272c42;
+  --gold:#e9b44c; --gold-soft:#2b2618; --wa:#25b865; --wa-fg:#06140b;
+  --sold:#6b7088; --chip:#20253a; --red:#ff5a36; --blue:#6f8bff; --hero:#131729; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1120; --panel:#161a2b; --fg:#eceef6; --muted:#9aa1b8; --line:#272c42;
+  --gold:#e9b44c; --gold-soft:#2b2618; --wa:#25b865; --wa-fg:#06140b;
+  --sold:#6b7088; --chip:#20253a; --red:#ff5a36; --blue:#6f8bff; --hero:#131729; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0}
+img{max-width:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.5}
+body.travado{overflow:hidden}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* topo */
+.hero{background:var(--hero);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--red),var(--blue))}
+.hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:12px 36px;align-items:center;padding-block:26px 30px}
+.logo{display:block;width:clamp(170px,22vw,250px);height:auto}
+.hero h1{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,4.6vw,48px);line-height:1.02;margin:0;text-transform:uppercase;text-wrap:balance;letter-spacing:.3px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--red),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{margin:10px 0 0;color:var(--muted);font-size:16px;max-width:56ch}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 0;padding:0;list-style:none;font-size:14px}
+.trust li{display:flex;align-items:center;gap:7px}
+.trust li::before{content:"";width:7px;height:7px;border-radius:2px;background:linear-gradient(135deg,var(--red),var(--blue));flex:none}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:18px}
+.cta .btn{font-size:15px;padding:11px 18px}
+.cta .num{font-family:var(--f-mono);font-size:14px;color:var(--muted);user-select:all}
+@media (max-width:720px){.hero .wrap{grid-template-columns:1fr;justify-items:start}.logo{width:170px}}
+
+/* barra de busca */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding-block:10px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.bar .wrap{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.bar input,.bar select{font:inherit;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.bar input{flex:1 1 200px;min-width:0}
+.pill{font:inherit;font-size:14px;cursor:pointer;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.pill[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.filtro-btn{display:inline-flex;align-items:center;gap:6px}
+.filtro-btn svg{width:15px;height:15px}
+.filtro-btn .seta{transition:transform .2s}
+.filtro-btn[aria-expanded="true"]{border-color:var(--blue);color:var(--blue)}
+.filtro-btn[aria-expanded="true"] .seta{transform:rotate(180deg)}
+.nf{background:var(--red);color:#fff;border-radius:999px;font-size:11px;font-weight:700;min-width:18px;height:18px;display:inline-grid;place-items:center;padding:0 5px}
+.filtros{width:100%;display:grid;gap:14px;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;max-height:min(70vh,560px);overflow-y:auto}
+.fg{display:grid;gap:6px}
+.fg>span{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.faixa-valor{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.faixa-valor input{width:140px;max-width:42%;flex:0 1 140px}
+.facoes{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.facoes .ver{background:var(--blue);border-color:var(--blue);color:#fff}
+@media (prefers-reduced-motion:reduce){.filtro-btn .seta{transition:none}}
+.resumo{width:100%;font-size:13px;color:var(--muted)}
+.resumo b{color:var(--fg);font-variant-numeric:tabular-nums}
+
+/* cartões */
+main{padding-block:22px 48px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+@media (max-width:400px){.grid{grid-template-columns:1fr}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.card.sold{opacity:.6}
+.gal{position:relative;aspect-ratio:4/3;max-width:100%;background:#0b0d16;overflow:hidden}
+.track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.track::-webkit-scrollbar{display:none}
+.track button{flex:0 0 100%;height:100%;padding:0;border:0;background:none;cursor:zoom-in;scroll-snap-align:start}
+.track img{width:100%;height:100%;object-fit:contain;display:block}
+.badge{position:absolute;top:10px;left:10px;display:flex;gap:6px;pointer-events:none}
+.tag{font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--shade);color:#fff}
+.tag.r{background:linear-gradient(90deg,#de3412,#2448e0);color:#fff}
+.tag.s{background:var(--sold);color:#fff}
+.tag.f{background:#2f7d4f;color:#fff}
+.count{position:absolute;bottom:10px;right:10px;font-size:12px;font-family:var(--f-mono);background:var(--shade);color:#fff;border-radius:6px;padding:2px 8px;pointer-events:none}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:0;background:var(--shade);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.nav.p{left:8px}.nav.n{right:8px}
+.body{padding:14px 16px 4px}
+.ref{font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.5px}
+.title{font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1.08;margin:2px 0 0;text-transform:uppercase;text-wrap:balance}
+.stat{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;margin:12px 0 0;padding:10px 12px;background:var(--chip);border-radius:8px;font-variant-numeric:tabular-nums}
+.stat dt{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);align-self:center}
+.stat dd{margin:0;font-family:var(--f-mono);font-size:14px}
+.stat dd.ind{color:var(--red)}
+ul.items{list-style:none;margin:0;padding:12px 16px;display:flex;flex-wrap:wrap;gap:6px;flex:1;align-content:flex-start}
+ul.items li{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:3px 9px}
+ul.items li.hl{background:var(--gold-soft);border-color:transparent;color:var(--gold);font-weight:600}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-top:1px solid var(--line)}
+.price small{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.price b{font-family:var(--f-display);font-size:25px;font-variant-numeric:tabular-nums}
+.btns{display:flex;gap:6px}
+.btn{font:inherit;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;padding:9px 12px;border:1px solid var(--line);color:var(--fg);background:transparent;white-space:nowrap;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.btn.wa{background:var(--wa);color:var(--wa-fg);border-color:var(--wa)}
+.btn svg{width:17px;height:17px;flex:none}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+
+/* menu */
+.menu{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.menu a{font-weight:600;font-size:14px;text-decoration:none;color:var(--fg);border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:8px 16px}
+.menu a:hover{border-color:var(--blue);color:var(--blue)}
+
+/* seções */
+.sec{padding-block:44px 52px;border-top:1px solid var(--line);scroll-margin-top:env(safe-area-inset-top,0px)}
+#contas{border-top:0;padding-block:30px 0}
+.sec-h{margin-bottom:20px}
+.sec-h .eyebrow{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--red)}
+.sec-h h2{font-family:var(--f-display);font-weight:800;font-size:clamp(30px,4vw,40px);line-height:1.05;margin:2px 0 6px;text-transform:uppercase;text-wrap:balance}
+.sec-h p{margin:0;color:var(--muted);max-width:62ch}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:24px;align-items:start}
+@media (max-width:880px){.duo{grid-template-columns:1fr}.duo .banner{max-width:420px}}
+.banner{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);cursor:zoom-in}
+.banner img{display:block;width:100%;height:auto}
+.stack{display:grid;gap:18px;min-width:0}
+.passos{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;counter-reset:p}
+@media (max-width:980px){.passos{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}}
+.passos li{counter-increment:p;position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 14px 14px 56px;display:grid;gap:2px;min-width:0}
+.passos li::before{content:counter(p);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:17px;color:#fff;background:linear-gradient(135deg,#de3412,#2448e0)}
+.passos b{font-family:var(--f-display);font-size:19px;line-height:1.15;text-transform:uppercase}
+.passos span{font-size:13px;color:var(--muted)}
+.cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+@media (max-width:760px){.cols2{grid-template-columns:1fr}}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+.panel h3{font-family:var(--f-display);font-size:24px;line-height:1.1;margin:0 0 4px;text-transform:uppercase}
+.panel .note{margin:0 0 14px;color:var(--muted);font-size:14px}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field>span{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:14px;cursor:pointer;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.seg button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.stepper{display:inline-flex;align-items:stretch;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
+.stepper button{font:inherit;font-size:18px;width:42px;border:0;background:transparent;color:var(--fg);cursor:pointer}
+.stepper output{min-width:110px;display:grid;place-items:center;font-family:var(--f-mono);font-size:15px;border-inline:1px solid var(--line);padding:8px 10px;font-variant-numeric:tabular-nums}
+.total{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:6px;padding-top:14px;border-top:1px solid var(--line)}
+.total small{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.total b{font-family:var(--f-display);font-size:32px;line-height:1;font-variant-numeric:tabular-nums}
+.total .sub2{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.tbl-wrap{overflow-x:auto}
+table.precos{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:14px}
+table.precos th,table.precos td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+table.precos th{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
+table.precos td.v{font-family:var(--f-mono)}
+.plans{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
+.plan{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:6px}
+.plan.dest{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.plan .nome{font-family:var(--f-display);font-size:24px;text-transform:uppercase;line-height:1}
+.plan .vel{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.plan .preco{font-family:var(--f-display);font-size:34px;line-height:1;margin-top:6px;font-variant-numeric:tabular-nums}
+.plan .preco small{font-family:var(--f-body);font-size:13px;color:var(--muted);font-weight:500}
+.plan .btn{margin-top:auto;justify-content:center}
+.plan .extras{display:grid;gap:2px;margin-bottom:8px}
+.plan .extra{font-size:13px;color:var(--muted)}
+.plan .extra.free{color:var(--wa);font-weight:600}
+.plan .flag{position:absolute;top:-10px;right:12px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;background:linear-gradient(90deg,#de3412,#2448e0);color:#fff;border-radius:999px;padding:3px 9px}
+.kvk{margin:12px 0 0;font-size:14px;color:var(--muted)}
+.kvk b{color:var(--fg)}
+.obs{margin:-6px 0 14px;padding:8px 12px;border-radius:8px;background:var(--chip);font-size:13px;color:var(--muted)}
+.obs b{color:var(--fg)}
+.aviso{margin:16px 0 0;padding:12px 16px;border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;background:var(--panel);font-size:14px;color:var(--muted);max-width:80ch}
+.aviso b{color:var(--red)}
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 20px;padding-block:20px 32px;color:var(--muted);font-size:13px}
+footer b{color:var(--fg)}
+@media (max-width:420px){.foot{flex-direction:column;align-items:stretch}.btns .btn{flex:1;justify-content:center}}
+
+/* álbum completo */
+.album{position:fixed;inset:0;z-index:40;background:var(--bg);overflow-y:auto}
+.album header{position:sticky;top:0;z-index:2;background:var(--panel);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.album header .wrap{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;padding-block:12px}
+.album header .t{flex:1 1 220px;min-width:0}
+.album header .t h2{font-family:var(--f-display);font-size:24px;line-height:1.1;margin:0;text-transform:uppercase}
+.album .fotos{columns:2 320px;column-gap:12px;padding-block:16px calc(env(safe-area-inset-bottom,0px) + 32px)}
+.album .fotos button{display:block;width:100%;margin:0 0 12px;padding:0;border:0;border-radius:8px;overflow:hidden;background:#0b0d16;cursor:zoom-in;break-inside:avoid}
+.album .fotos img{display:block;width:100%;height:auto}
+
+/* compra direto no site */
+.btn.pix{background:#32BCAD;border-color:#32BCAD;color:#fff}
+.btn.pix:disabled{opacity:.45;cursor:not-allowed}
+.btn.grande{width:100%;justify-content:center;font-size:16px;padding:13px 16px;margin-top:4px}
+.compra{position:fixed;inset:0;z-index:45;background:rgba(5,6,12,.72);display:flex;align-items:flex-end;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 16px) max(12px,env(safe-area-inset-right,0px)) 0 max(12px,env(safe-area-inset-left,0px))}
+@media (min-width:640px){.compra{align-items:center;padding-bottom:16px}}
+.cbox{position:relative;width:100%;max-width:460px;max-height:100%;overflow-y:auto;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:16px 16px 0 0;padding:20px 18px calc(env(safe-area-inset-bottom,0px) + 20px)}
+@media (min-width:640px){.cbox{border-radius:16px}}
+.cfechar{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer;font-size:15px}
+.ceyebrow{font-size:12px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--red)}
+.cbox h3{font-family:var(--f-display);font-size:26px;line-height:1.1;margin:2px 40px 8px 0;text-transform:uppercase}
+.cdet{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 12px;background:var(--chip);border-radius:8px;margin-bottom:14px;font-size:14px;color:var(--muted)}
+.cdet b{font-family:var(--f-display);font-size:24px;color:var(--fg);white-space:nowrap}
+.clabel{display:block;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+#cLoc{width:100%;font:inherit;font-family:var(--f-mono);font-size:14px;color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 12px}
+.cmsg{min-height:20px;font-size:13px;margin:6px 0 8px}
+.cmsg.ok{color:var(--wa)} .cmsg.erro{color:var(--red)}
+.ccomo{font-size:13px;color:var(--muted);margin-bottom:12px}
+.ccomo summary{cursor:pointer;color:var(--blue);font-weight:600}
+.ccomo ol{margin:8px 0 4px;padding-left:20px}
+.creq{font-size:13px;color:var(--muted);background:var(--chip);border-radius:8px;padding:10px 12px;margin-bottom:12px}
+.creq ul{margin:6px 0 0;padding-left:18px}
+.creq b{color:var(--fg)}
+.cchk{display:flex;gap:8px;align-items:center;font-size:14px;margin-bottom:12px;cursor:pointer}
+.cnota{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0}
+.cprev{font-size:14px;color:var(--muted);background:var(--chip);border-radius:8px;padding:12px;margin:0 0 14px}
+
+/* tela cheia */
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,6,12,.95);display:flex;align-items:center;justify-content:center;padding:calc(env(safe-area-inset-top,0px) + 52px) max(12px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 48px) max(12px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lb .x{position:absolute;top:calc(env(safe-area-inset-top,0px) + 10px);right:max(12px,env(safe-area-inset-right,0px));background:var(--shade);color:#fff;border:0;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+.lb .cap{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);left:0;right:0;text-align:center;color:#fff;font-family:var(--f-mono);font-size:13px}
+.lb .nav{width:44px;height:44px}
+.lb .nav.p{left:max(10px,env(safe-area-inset-left,0px))}.lb .nav.n{right:max(10px,env(safe-area-inset-right,0px))}
+</style>
+
+<section class="hero">
+  <div class="wrap">
+    <img class="logo" src="img/logo.png" alt="Pedrinho X9" width="560" height="435">
+    <div>
+      <h1>Tudo para o seu Lords Mobile <em>em um só lugar</em></h1>
+      <p class="sub">Contas com álbum completo, recursos, gemas e bots de scan e farm. Atendimento direto pelo WhatsApp.</p>
+      <div class="cta">
+        <a class="btn wa" id="waTopo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Falar no WhatsApp</a>
+        <span class="num">+55 12 98871-9600</span>
+      </div>
+      <nav class="menu" aria-label="Seções">
+        <a href="#contas">Contas</a><a href="#gemas">Gemas e recursos</a><a href="#bots">Bots</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contas">
+<div class="wrap sec-h"><div class="eyebrow">Contas</div><h2>Contas à venda</h2><p>Toque na foto para ampliar ou abra o álbum completo de cada conta.</p></div>
+<div class="wrap"><ol class="passos" aria-label="Como trabalhamos">
+  <li><b>Escolha a conta</b><span>Veja o álbum completo, os bônus e os itens de cada conta.</span></li>
+  <li><b>Chame no WhatsApp</b><span>Atendimento direto com a gente para tirar suas dúvidas e fechar a compra.</span></li>
+  <li><b>Pagamento</b><span>Pagamento via Pix ou cartão, com entrada e parcelas. Aceitamos conta como parte da entrada.</span></li>
+  <li><b>Criação do grupo / acesso</b><span>Criamos um grupo com você para explicar o funcionamento, as regras e o acesso à conta.</span></li>
+  <li><b>Garantia e suporte</b><span>Você segue com a gente depois da compra, com garantia e suporte.</span></li>
+</ol></div>
+<div class="bar"><div class="wrap">
+  <input id="busca" type="search" placeholder="Buscar REF, reino ou item (ex.: 174, K1785, skin)" aria-label="Buscar">
+  <button class="pill filtro-btn" id="fAbrir" aria-expanded="false" aria-controls="filtros"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5h18v2l-7 7v5l-4 2v-7L3 7z"/></svg>Filtros <span class="nf" id="nFiltros" hidden></span><span class="seta" aria-hidden="true">▾</span></button>
+  <select id="ordem" aria-label="Ordenar">
+    <option value="novo">Mais novas</option>
+    <option value="menor">Menor preço</option>
+    <option value="maior">Maior preço</option>
+    <option value="ind">Maior IND</option>
+  </select>
+  <div class="filtros" id="filtros" hidden>
+    <div class="fg"><span>IND mínimo</span><div class="seg" id="fInd"></div></div>
+    <div class="fg"><span>Champ</span><div class="seg" id="fChamp"></div></div>
+    <div class="fg"><span>Tipo de conta</span><div class="seg" id="fTipo"></div></div>
+    <div class="fg"><span>Reino</span><div class="seg" id="fReino"></div></div>
+    <div class="fg"><span>Características</span><div class="seg" id="fCarac"></div></div>
+    <div class="fg"><span>Valor (R$)</span><div class="faixa-valor">
+      <input id="vMin" type="number" inputmode="numeric" min="0" step="100" placeholder="Mínimo" aria-label="Valor mínimo">
+      <span>até</span>
+      <input id="vMax" type="number" inputmode="numeric" min="0" step="100" placeholder="Máximo" aria-label="Valor máximo">
+    </div></div>
+    <div class="facoes"><button class="btn" id="fLimpar" type="button">Limpar filtros</button><button class="btn ver" id="fVer" type="button">Ver contas</button></div>
+  </div>
+  <div class="resumo"><b id="nAchadas">0</b> de <b id="nDisp">0</b> contas disponíveis</div>
+</div></div>
+
+<main class="wrap"><div class="grid" id="grid"></div><p class="empty" id="vazio" hidden>Nenhuma conta com esses filtros.</p></main>
+</section>
+
+<section class="sec" id="gemas"><div class="wrap">
+  <div class="sec-h"><div class="eyebrow">Gemas e recursos</div><h2>Gemas e Full Bank</h2><p id="gemasTxt">Escolha a faixa da sua conta e a quantidade, cole a localização do castelo e mande o pedido pronto no WhatsApp. Pagamento via Pix e entrega em guilda pública.</p></div>
+  <div class="cols2">
+      <div class="panel">
+        <h3>Gemas · de 100K em 100K</h3><p class="note">Entrega em guilda pública. Mande o print da localização e o pedido.</p>
+        <div class="field"><span>Poder da conta</span><div class="seg" id="gFaixa"></div></div>
+        <div class="field"><span>Quantidade de gemas</span>
+          <div class="stepper"><button id="gMenos" aria-label="Menos 100K">−</button><output id="gQtd">100K</output><button id="gMais" aria-label="Mais 100K">+</button></div></div>
+        <div class="total"><div><small>Total</small><b id="gTotal">R$ 0</b><span class="sub2" id="gObs"></span></div><span id="gWa"></span></div>
+      </div>
+      <div class="panel">
+        <h3>Gemas · de 1M em 1M</h3><p class="note">Entrega em guilda pública. Mande o print da localização e o pedido. <b>Comprando 2M de gemas, você ganha o Full Bank.</b></p>
+        <div class="field"><span>Poder da conta</span><div class="seg" id="mFaixa"></div></div>
+        <div class="field"><span>Quantidade de gemas</span>
+          <div class="stepper"><button id="mMenos" aria-label="Menos 1M">−</button><output id="mQtd">1M</output><button id="mMais" aria-label="Mais 1M">+</button></div></div>
+        <div class="total"><div><small>Total</small><b id="mTotal">R$ 0</b><span class="sub2" id="mObs"></span></div><span id="mWa"></span></div>
+      </div>
+      <div class="panel">
+        <h3>Full Bank (4/4/4/4/4)</h3><p class="note">Entrega em guilda pública, direto no seu próprio reino. É só mandar o print da localização.</p>
+        <p class="obs"><b>Observação:</b> o castelo precisa estar longe do Wonder, com 6 espaços livres em volta, e a guilda tem que ser pública, sem restrição de poder.</p>
+        <div class="field"><span>Reino</span><div class="seg" id="rFaixa"></div></div>
+        <div class="field"><span>Quantidade</span>
+          <div class="stepper"><button id="rMenos" aria-label="Menos um">−</button><output id="rQtd">1</output><button id="rMais" aria-label="Mais um">+</button></div></div>
+        <div class="total"><div><small>Total</small><b id="rTotal">R$ 0</b><span class="sub2" id="rObs"></span></div><span id="rWa"></span></div>
+      </div>
+      <div class="panel">
+        <h3>Quase Full (4/4/4/4/2)</h3><p class="note"><b>Tudo cheio, só o ouro pela metade.</b></p><p class="note">Entrega em guilda pública, direto no seu próprio reino. É só mandar o print da localização.</p>
+        <p class="obs"><b>Observação:</b> o castelo precisa estar longe do Wonder, com 6 espaços livres em volta, e a guilda tem que ser pública, sem restrição de poder.</p>
+        <div class="field"><span>Reino</span><div class="seg" id="hFaixa"></div></div>
+        <div class="field"><span>Quantidade</span>
+          <div class="stepper"><button id="hMenos" aria-label="Menos um">−</button><output id="hQtd">1</output><button id="hMais" aria-label="Mais um">+</button></div></div>
+        <div class="total"><div><small>Total</small><b id="hTotal">R$ 0</b><span class="sub2" id="hObs"></span></div><span id="hWa"></span></div>
+      </div>
+  </div>
+</div></section>
+
+<section class="sec" id="bots"><div class="wrap">
+  <div class="sec-h"><div class="eyebrow">Bots</div><h2>Bot Scan e Bot Farm</h2></div>  
+  <div class="stack">
+    <div style="display:contents">
+      <div class="panel">
+        <h3>Falcon Bot · scan</h3><p class="note">Todos os planos são mensais. O que muda entre eles é a velocidade com que o bot atualiza o scan no mapa.</p>
+        <div class="plans" id="fPlanos"></div>
+        <p class="kvk" id="fKvk"></p>
+        <p class="kvk"><b>Chat Bot:</b> envia todas as informações do grupo no chat da guilda.</p>
+      </div>
+      <div class="panel">
+        <h3>Bot Farm</h3><p class="note">Preço cobrado por cada conta. O bot é configurado do jeito que você pedir, a partir de um formulário que enviamos pelo WhatsApp.</p>
+        <div class="field"><span>Período</span><div class="seg" id="bPer"></div></div>
+        <div class="field"><span>Quantas contas</span>
+          <div class="stepper"><button id="bMenos" aria-label="Menos uma conta">−</button><output id="bQtd">1</output><button id="bMais" aria-label="Mais uma conta">+</button></div></div>
+        <div class="total"><div><small>Total</small><b id="bTotal">R$ 0</b><span class="sub2" id="bObs"></span></div><span id="bWa"></span></div>
+        <div class="aviso" role="note"><b>Aviso importante:</b> o uso de bots vai contra as regras do jogo e pode levar a punições ou ao banimento da conta. Ao contratar, você assume esse risco. A Pedrinho X9 não se responsabiliza por banimentos ou qualquer punição aplicada pela desenvolvedora do jogo.</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span><b>Pedrinho X9</b> · WhatsApp +55 12 98871-9600</span>
+  <span><a href="termos.html">Termos e privacidade</a> · Lords Mobile é marca da sua desenvolvedora. Este site não tem ligação com ela.</span>
+</div></footer>
+
+<div class="album" id="album" hidden role="dialog" aria-modal="true" aria-labelledby="alTit">
+  <header><div class="wrap">
+    <button class="btn" id="alVoltar">‹ Voltar</button>
+    <div class="t"><div class="ref" id="alRef"></div><h2 id="alTit"></h2></div>
+    <a class="btn wa" id="alWa" target="_blank" rel="noopener">WhatsApp</a>
+  </div></header>
+  <div class="wrap fotos" id="alFotos"></div>
+</div>
+
+<div class="compra" id="compra" hidden role="dialog" aria-modal="true" aria-labelledby="cTitulo">
+  <div class="cbox">
+    <button class="cfechar" type="button" id="cFechar" aria-label="Fechar">✕</button>
+    <div class="ceyebrow">Seu pedido</div>
+    <h3 id="cTitulo"></h3>
+    <div class="cdet"><span id="cDetalhe"></span><b id="cTotal"></b></div>
+    <div id="cPassos">
+      <label class="clabel" for="cLoc">Localização do castelo</label>
+      <input id="cLoc" type="text" autocomplete="off" placeholder="[TAG]Nome K:1446 X:123 Y:111">
+      <div id="cMsg" class="cmsg"></div>
+      <details class="ccomo"><summary>Como copiar a localização</summary>
+        <ol><li>No jogo, toque no seu castelo.</li><li>Toque no ícone de compartilhar ao lado de <b>K: X: Y:</b>.</li><li>Copie o texto que aparece no chat e cole aqui.</li></ol>
+        <p>Foto não serve: tem que ser o texto.</p>
+      </details>
+      <div class="creq"><b>Antes de pagar, deixe pronto:</b>
+        <ul><li>Castelo numa guilda <b>pública</b>, sem poder mínimo e com <b>10+ vagas</b></li><li>Espaço livre em volta do castelo, longe do Wonder</li><li>Não mova o castelo durante a entrega</li></ul>
+      </div>
+      <label class="cchk"><input type="checkbox" id="cOk"> Conferi os requisitos acima</label>
+      <button class="btn pix grande" type="button" id="cPagar" disabled>Enviar pedido no WhatsApp</button>
+      <p class="cnota" id="cNota">O pedido vai pronto para o nosso WhatsApp, com a localização. Lá você recebe a chave Pix e a entrega começa logo após o pagamento.</p>
+    </div>
+    <div id="cFim" hidden>
+      <p class="cprev"><b>Prévia:</b> no site de verdade, aqui abre a página de pagamento Pix da InfinitePay. Depois de pagar, o cliente volta para a página <b>"Acompanhe seu pedido"</b>: pago → entregando → entregue ✅.</p>
+      <button class="btn" type="button" id="cVoltar">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img id="lbImg" alt="">
+  <button class="nav p" id="lbP" aria-label="Foto anterior">‹</button>
+  <button class="nav n" id="lbN" aria-label="Próxima foto">›</button>
+  <button class="x" id="lbX">Fechar</button>
+  <div class="cap" id="lbCap"></div>
+</div>
+
+<script>
+const FOTOS = {"174": ["fotos/gx174-01.jpg", "fotos/gx174-02.jpg", "fotos/gx174-03.jpg", "fotos/gx174-04.jpg", "fotos/gx174-05.jpg", "fotos/gx174-06.jpg", "fotos/gx174-07.jpg"], "164": ["fotos/gx164-01.jpg", "fotos/gx164-02.jpg", "fotos/gx164-03.jpg", "fotos/gx164-04.jpg", "fotos/gx164-05.jpg", "fotos/gx164-06.jpg", "fotos/gx164-07.jpg", "fotos/gx164-08.jpg"], "168": ["fotos/gx168-01.jpg", "fotos/gx168-02.jpg", "fotos/gx168-03.jpg", "fotos/gx168-04.jpg", "fotos/gx168-05.jpg", "fotos/gx168-06.jpg", "fotos/gx168-07.jpg", "fotos/gx168-08.jpg", "fotos/gx168-09.jpg", "fotos/gx168-10.jpg"], "166": ["fotos/gx166-01.jpg", "fotos/gx166-02.jpg", "fotos/gx166-03.jpg", "fotos/gx166-04.jpg", "fotos/gx166-05.jpg", "fotos/gx166-06.jpg", "fotos/gx166-07.jpg", "fotos/gx166-08.jpg"], "162": ["fotos/gx162-01.jpg", "fotos/gx162-02.jpg", "fotos/gx162-03.jpg", "fotos/gx162-04.jpg", "fotos/gx162-05.jpg", "fotos/gx162-06.jpg", "fotos/gx162-07.jpg", "fotos/gx162-08.jpg"], "170": ["fotos/gx170-01.jpg", "fotos/gx170-02.jpg", "fotos/gx170-03.jpg", "fotos/gx170-04.jpg", "fotos/gx170-05.jpg", "fotos/gx170-06.jpg", "fotos/gx170-07.jpg", "fotos/gx170-08.jpg", "fotos/gx170-09.jpg"]};
+const WA = "5512988719600";
+const contas = [
+  {ref:"REF GX 174", id:"174", titulo:"7 Champ restrita / +1600%", k:1791, champ:7, ind:[1600,1511,1565], mix:[[1160,952,1058]], base:[616,565,600],
+   itens:["7 Champ 🧡","2 + 1 Taças 🧡💛","2 skins de líder","Skins de exército","114 abençoados","879 estrelas de artefato","Low quest"], preco:64876, status:"disp", ordem:6},
+  {ref:"REF GX 170", id:"170", titulo:"8 fams full / K1953", k:1953, ind:[1112,1105,1128], mix:[[803,777,647]], base:[353,353,344],
+   itens:["Pode ir pro K1953 ✈️","8 familiares full","Low quest"], preco:16868, status:"disp", ordem:5},
+  {ref:"REF GX 168", id:"168", titulo:"Skin de líder / +1559%", k:1735, ind:[1559,1516,1529], mix:[[1061,860,1025],[1005,846,1005]], base:[555,552,560],
+   itens:["Pode ir pro K1735 ✈️","2 skins de líder","144 abençoados","111 estrelas de castelo","Low quest"], preco:59686, status:"disp", ordem:4},
+  {ref:"REF GX 166", id:"166", titulo:"Restrita K1785 / +1471%", k:1785, ind:[1453,1471,1442], mix:[[1003,920,1035]], base:[510,524,509],
+   itens:["Pode ir pro K1785 ✈️","Tropas mágicas LV 2","3 skins de rota","2 skins de exército","113 abençoados","843 estrelas de artefato"], preco:40223, status:"disp", ordem:3},
+  {ref:"REF GX 164", id:"164", titulo:"Rally forte / +1811%", k:1503, ind:[1794,1766,1811], mix:[[1304,1211,1168],[1215,1211,1272]], base:[763,750,782],
+   itens:["K1503 ✈️","Rally lead forte","Castelo LV 5","Tropas mágicas LV 3","3 skins de rota","4 skins de exército","151 abençoados","926 estrelas de artefato","Low quest"], preco:112884, status:"disp", ordem:2},
+  {ref:"REF GX 162", id:"162", titulo:"Herói de 11K / +1406%", k:null, ind:[1366,1339,1406], base:[482,481,507],
+   itens:["1 herói de 11K 💛","Tropas mágicas LV 1","90 abençoados","632 estrelas de artefato"], preco:35033, status:"disp", ordem:1},
+];
+const WA_SVG = document.querySelector("#waTopo svg").outerHTML;
+const $ = id => document.getElementById(id);
+const brl = v => v==null ? "Consultar" : v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+const pct = a => a.map(n=>n+"%").join(" · ");
+const rest = c => c.k!=null && c.k>=1300;
+const maxInd = c => c.ind ? Math.max(...c.ind) : 0;
+const slug = c => "gx"+c.id;
+const waLink = txt => "https://wa.me/"+WA+"?text="+encodeURIComponent(txt);
+const FILTRO0 = {busca:"",ind:0,champ:"",tipo:"",reino:"",carac:[],vmin:"",vmax:"",ordem:"novo"};
+// conta farm/banco: marcada com tipo:"farm" (ou "FARM"/"BANCO" no título); vai sempre para o fim da lista
+const farm = c => c.tipo==="farm" || /\b(farm|banco|bank)\b/i.test(c.titulo);
+const st = JSON.parse(JSON.stringify(FILTRO0));
+try{ Object.assign(st, JSON.parse(localStorage.getItem("filtros4")||"{}")); }catch(e){}
+// características lidas do texto da conta
+const CARAC = {
+  "Tropa mágica": c=>/tropas? m[aá]gicas?/i.test(c.itens.join(" ")),
+  "Mana": c=>/\bmana\b/i.test(c.itens.join(" ")+" "+c.titulo),
+  "Skin de líder": c=>/skins? de l[ií]der/i.test(c.itens.join(" ")+" "+c.titulo),
+  "Low quest": c=>/low quest/i.test(c.itens.join(" ")),
+};
+const nChamp = c => c.champ ?? (()=>{const m=(c.itens.join(" ")+" "+c.titulo).match(/(\d+)\s*(?:\+\s*\d+\s*)?champ/i); return m?+m[1]:0;})();
+const fullChamp = c => !!c.fullChamp || /full champ/i.test(c.itens.join(" ")+" "+c.titulo);
+function el(tag, cls, txt){const e=document.createElement(tag); if(cls) e.className=cls; if(txt!=null) e.textContent=txt; return e;}
+function waBtn(c, label){const w=el("a","btn wa"); w.href=waLink(c?"Oi! Tenho interesse na "+c.ref+".":"Oi! Vi o catálogo da Pedrinho X9 e quero saber das contas.");
+  w.target="_blank"; w.rel="noopener"; w.insertAdjacentHTML("afterbegin",WA_SVG); w.append(label); return w;}
+$("waTopo").href = waLink("Oi! Vi o catálogo da Pedrinho X9 e quero saber das contas.");
+
+function galeria(c){
+  const fotos=FOTOS[c.id]||[], g=el("div","gal"), tr=el("div","track");
+  fotos.forEach((src,i)=>{const b=el("button"); b.setAttribute("aria-label","Ampliar foto "+(i+1)+" da "+c.ref);
+    const im=el("img"); im.src=src; im.alt="Foto "+(i+1)+" da "+c.ref; im.loading=i?"lazy":"eager"; b.append(im);
+    if(!i){const fit=()=>{if(im.naturalWidth) g.style.aspectRatio=im.naturalWidth+"/"+im.naturalHeight;}; im.complete?fit():im.addEventListener("load",fit);}
+    b.addEventListener("click",()=>foto(c,i)); tr.append(b);});
+  g.append(tr);
+  const bd=el("div","badge"), sold=c.status==="vendida";
+  bd.append(el("span","tag "+(sold?"s":rest(c)?"r":""), sold?"Vendida":rest(c)?"Restrita":"Reino aberto"));
+  if(farm(c)) bd.append(el("span","tag f","Farm / Banco"));
+  g.append(bd);
+  const cnt=el("span","count","1/"+fotos.length); g.append(cnt);
+  const go=d=>tr.scrollBy({left:d*tr.clientWidth,behavior:"smooth"});
+  const p=el("button","nav p","‹"), n=el("button","nav n","›");
+  p.setAttribute("aria-label","Foto anterior"); n.setAttribute("aria-label","Próxima foto"); p.onclick=()=>go(-1); n.onclick=()=>go(1); g.append(p,n);
+  tr.addEventListener("scroll",()=>{cnt.textContent=(Math.round(tr.scrollLeft/tr.clientWidth)+1)+"/"+fotos.length;},{passive:true});
+  return g;
+}
+function card(c){
+  const sold=c.status==="vendida", a=el("article","card"+(sold?" sold":"")); a.id="c-"+slug(c);
+  a.append(galeria(c));
+  const b=el("div","body"); b.append(el("div","ref",c.ref+(c.k?" · K"+c.k:"")), el("h2","title",c.titulo));
+  if(c.ind||c.mix){const dl=el("dl","stat");
+    if(c.ind){dl.append(el("dt",null,"IND"),el("dd","ind",pct(c.ind)));}
+    (c.mix||[]).forEach((m,i,all)=>dl.append(el("dt",null,all.length>1?"MIX "+(i+1):"MIX"),el("dd",null,pct(m))));
+    // regra: Base só aparece quando a conta tem base acima de 550%
+    if(c.base && Math.max(...c.base)>550){dl.append(el("dt",null,"Base"),el("dd",null,pct(c.base)));}
+    b.append(dl);}
+  a.append(b);
+  const ul=el("ul","items"); c.itens.forEach(t=>ul.append(el("li",/champ|taça|11k|skin de líder|full/i.test(t)?"hl":null,t))); a.append(ul);
+  const f=el("div","foot"), p=el("div","price"); p.append(el("small",null,"Valor"), el("b",null,sold?"—":brl(c.preco)));
+  const bt=el("div","btns"); const al=el("a","btn","Álbum completo"); al.href="#"+slug(c); bt.append(al);
+  if(!sold) bt.append(waBtn(c,"WhatsApp"));
+  f.append(p,bt); a.append(f); return a;
+}
+
+// álbum completo (dentro do site, abre pelo endereço #gx174)
+let albumAtual=null;
+function abrirAlbum(c){
+  albumAtual=c; $("alRef").textContent=c.ref+(c.k?" · K"+c.k:"")+" · "+(FOTOS[c.id]||[]).length+" fotos"; $("alTit").textContent=c.titulo;
+  $("alWa").href=waLink("Oi! Tenho interesse na "+c.ref+"."); $("alWa").hidden=c.status==="vendida";
+  $("alFotos").replaceChildren(...(FOTOS[c.id]||[]).map((src,i)=>{const b=el("button"); b.setAttribute("aria-label","Ampliar foto "+(i+1));
+    const im=el("img"); im.src=src; im.alt="Foto "+(i+1)+" da "+c.ref; im.loading="lazy"; b.append(im); b.onclick=()=>foto(c,i); return b;}));
+  $("album").hidden=false; $("album").scrollTop=0; document.body.classList.add("travado"); $("alVoltar").focus();
+}
+function fecharAlbum(){$("album").hidden=true; document.body.classList.remove("travado");
+  const c=albumAtual; albumAtual=null; if(c){const card=$("c-"+slug(c)); if(card) card.scrollIntoView({block:"center"});}}
+function rota(){const h=location.hash.slice(1).toLowerCase(); const c=contas.find(x=>slug(x)===h);
+  if(c) abrirAlbum(c); else if(!$("album").hidden) fecharAlbum();}
+$("alVoltar").onclick=()=>{ if(location.hash){history.replaceState(null,"",location.pathname+location.search);} fecharAlbum(); };
+window.addEventListener("hashchange",rota);
+
+// tela cheia
+let atual=null, idx=0;
+function mostrar(){if(!atual||!FOTOS[atual.id])return; const fs=FOTOS[atual.id]; idx=(idx+fs.length)%fs.length; $("lbImg").src=fs[idx]; $("lbImg").alt="Foto "+(idx+1)+" da "+atual.ref; $("lbCap").textContent=atual.ref+" · "+(idx+1)+"/"+fs.length;}
+function foto(c,i){atual=c; idx=i; mostrar(); $("lb").hidden=false; document.body.classList.add("travado"); $("lbX").focus();}
+function fecharFoto(){$("lb").hidden=true; if($("album").hidden) document.body.classList.remove("travado");}
+$("lbX").onclick=fecharFoto; $("lbP").onclick=()=>{idx--;mostrar();}; $("lbN").onclick=()=>{idx++;mostrar();};
+$("lb").addEventListener("click",e=>{if(e.target.id==="lb")fecharFoto();});
+document.addEventListener("keydown",e=>{
+  if(!$("lb").hidden){ if(e.key==="Escape")fecharFoto(); if(e.key==="ArrowLeft"){idx--;mostrar();} if(e.key==="ArrowRight"){idx++;mostrar();} return; }
+  if(!$("album").hidden && e.key==="Escape") $("alVoltar").click();
+});
+let tx=null; $("lb").addEventListener("touchstart",e=>{tx=e.touches[0].clientX;},{passive:true});
+$("lb").addEventListener("touchend",e=>{if(tx==null)return; const d=e.changedTouches[0].clientX-tx; if(Math.abs(d)>40){idx+=d<0?1:-1;mostrar();} tx=null;});
+
+function passa(c){
+  const q=st.busca.trim().toLowerCase();
+  if(q && ![c.ref,c.k?"k"+c.k:"",c.titulo,...c.itens].join(" ").toLowerCase().includes(q)) return false;
+  if(st.ind && maxInd(c)<st.ind) return false;
+  if(st.champ==="full" && !fullChamp(c)) return false;
+  if(st.champ==="4" && nChamp(c)<4) return false;
+  if(["1","2","3"].includes(st.champ) && nChamp(c)!==+st.champ) return false;
+  if(st.tipo==="principal" && farm(c)) return false;
+  if(st.tipo==="farm" && !farm(c)) return false;
+  if(st.reino==="rest" && !rest(c)) return false;
+  if(st.reino==="aberto" && rest(c)) return false; // sem reino informado conta como reino aberto
+  if(st.carac.some(k=>!CARAC[k](c))) return false;
+  const vmin=parseFloat(st.vmin), vmax=parseFloat(st.vmax);
+  if(!isNaN(vmin) && (c.preco==null||c.preco<vmin)) return false;
+  if(!isNaN(vmax) && (c.preco==null||c.preco>vmax)) return false;
+  return true;
+}
+function contaFiltros(){return (st.ind?1:0)+(st.champ?1:0)+(st.tipo?1:0)+(st.reino?1:0)+st.carac.length+(st.vmin!==""?1:0)+(st.vmax!==""?1:0);}
+function render(){
+  let list=contas.filter(passa);
+  list.sort((a,b)=>(a.status==="vendida")-(b.status==="vendida") || farm(a)-farm(b) ||
+    (st.ordem==="menor"?(a.preco??1e12)-(b.preco??1e12):st.ordem==="maior"?(b.preco??0)-(a.preco??0):st.ordem==="ind"?maxInd(b)-maxInd(a):b.ordem-a.ordem));
+  $("grid").replaceChildren(...list.map(card)); $("vazio").hidden=list.length>0;
+  const d=contas.filter(c=>c.status!=="vendida");
+  $("nDisp").textContent=d.length; $("nAchadas").textContent=list.filter(c=>c.status!=="vendida").length;
+  const n=contaFiltros(); $("nFiltros").textContent=n; $("nFiltros").hidden=!n;
+  $("fVer").textContent="Ver "+list.length+(list.length===1?" conta":" contas");
+  try{localStorage.setItem("filtros4",JSON.stringify(st));}catch(e){}
+}
+// botões de escolha única (clicar de novo no escolhido volta para "Todas")
+function grupo(box, opcoes, chave){
+  const bs=opcoes.map(([valor,rot])=>{const b=el("button",null,rot); b.type="button"; b.dataset.v=valor;
+    b.onclick=()=>{st[chave]=(st[chave]===valor?FILTRO0[chave]:valor); marca(); render();}; return b;});
+  box.replaceChildren(...bs);
+  const marca=()=>bs.forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.v)===String(st[chave])));
+  marca(); return marca;
+}
+const marcas=[
+  grupo($("fInd"), [[0,"Todas"],...[800,900,1000,1100,1200,1300,1400,1500].map(v=>[v,v+"%+"])], "ind"),
+  grupo($("fChamp"), [["","Todas"],["1","1"],["2","2"],["3","3"],["4","4 ou mais"],["full","Full champ"]], "champ"),
+  grupo($("fTipo"), [["","Todas"],["principal","Contas principais"],["farm","Farm / Banco"]], "tipo"),
+  grupo($("fReino"), [["","Todos"],["aberto","Reino aberto"],["rest","Restrita"]], "reino"),
+];
+// características: pode marcar várias
+const cb=Object.keys(CARAC).map(k=>{const b=el("button",null,k); b.type="button";
+  b.onclick=()=>{st.carac=st.carac.includes(k)?st.carac.filter(x=>x!==k):[...st.carac,k]; marcaCarac(); render();}; return b;});
+$("fCarac").replaceChildren(...cb);
+const marcaCarac=()=>cb.forEach(b=>b.setAttribute("aria-pressed",st.carac.includes(b.textContent)));
+marcaCarac();
+function abreFiltros(abrir){$("filtros").hidden=!abrir; $("fAbrir").setAttribute("aria-expanded",abrir);}
+$("fAbrir").onclick=()=>abreFiltros($("filtros").hidden);
+$("fVer").onclick=()=>{abreFiltros(false); $("contas").scrollIntoView({behavior:"smooth"});};
+$("fLimpar").onclick=()=>{const o=st.ordem; Object.assign(st, JSON.parse(JSON.stringify(FILTRO0)), {ordem:o});
+  $("busca").value=""; $("vMin").value=""; $("vMax").value=""; marcas.forEach(m=>m()); marcaCarac(); render();};
+$("busca").value=st.busca; $("ordem").value=st.ordem; $("vMin").value=st.vmin; $("vMax").value=st.vmax;
+$("busca").addEventListener("input",e=>{st.busca=e.target.value;render();});
+$("vMin").addEventListener("input",e=>{st.vmin=e.target.value;render();});
+$("vMax").addEventListener("input",e=>{st.vmax=e.target.value;render();});
+$("ordem").addEventListener("change",e=>{st.ordem=e.target.value;render();});
+render(); rota();
+
+// ===== Produtos (mesmas linhas da aba "site" da planilha; no site real são lidas da planilha publicada) =====
+const PRODUTOS = [
+  ["Gemas","Gemas (até 900K)","Poder 0 – 980M","por 100K gemas",24,"","","sim"],
+  ["Gemas","Gemas (até 900K)","Poder 980M – 1,98B","por 100K gemas",25,"","","sim"],
+  ["Gemas","Gemas (até 900K)","Poder +2B","por 100K gemas",26,"","","sim"],
+  ["Gemas","Gemas (1M ou mais)","Poder 0 – 980M","por 1M gemas",235,"","Mais vendido","sim"],
+  ["Gemas","Gemas (1M ou mais)","Poder 980M – 1,98B","por 1M gemas",245,"","","sim"],
+  ["Gemas","Gemas (1M ou mais)","Poder +2B","por 1M gemas",250,"","","sim"],
+  ["Recursos","Full Bank (4/4/4/4/4)","K1 – K1959","por full bank",7,"","","sim"],
+  ["Recursos","Full Bank (4/4/4/4/4)","K1959 – K2008","por full bank",9,"","","sim"],
+  ["Recursos","Quase Full (4/4/4/4/2)","K1 – K1959","por quase full",5.5,"Entrega em guilda pública, no seu próprio reino.","","sim"],
+  ["Recursos","Quase Full (4/4/4/4/2)","K1959 – K2008","por quase full",7.5,"Entrega em guilda pública, no seu próprio reino.","","sim"],
+  ["Bot Scan","Falcon Bot Basic","Atualiza a cada 30 seg","por mês",195,"Chat Bot: + US$ 4,80 · KvK: + US$ 7","","sim"],
+  ["Bot Scan","Falcon Bot Fast","Atualiza a cada 15 seg","por mês",275,"Chat Bot: + US$ 4,80 · KvK: + US$ 7","","sim"],
+  ["Bot Scan","Falcon Bot Turbo","Atualiza a cada 5 seg","por mês",335,"Chat Bot grátis · KvK: + US$ 7","Mais vendido","sim"],
+  ["Bot Scan","Falcon Bot Ultra","Atualiza a cada 3 seg","por mês",550,"Chat Bot grátis · KvK: + US$ 7","","sim"],
+  ["Bot Farm","Bot Farm","1 mês","por conta",15,"","","sim"],
+  ["Bot Farm","Bot Farm","6 meses","por conta",75,"Sai R$ 12,50 por mês.","","sim"],
+  ["Bot Farm","Bot Farm","12 meses","por conta",140,"Sai R$ 11,67 por mês.","Mais vendido","sim"],
+].map(r=>({cat:r[0],prod:r[1],faixa:r[2],unid:r[3],preco:r[4],desc:r[5],dest:r[6],ativo:r[7]})).filter(p=>p.ativo==="sim" && p.preco!=="");
+const R = v => v.toLocaleString("pt-BR",{style:"currency",currency:"BRL",minimumFractionDigits:2});
+function segmento(box, opcoes, onPick){
+  let sel=0; const bs=opcoes.map((o,i)=>{const b=el("button",null,o); b.type="button"; b.setAttribute("aria-pressed",i===0);
+    b.onclick=()=>{sel=i; bs.forEach((x,j)=>x.setAttribute("aria-pressed",j===i)); onPick(i);}; return b;});
+  box.replaceChildren(...bs); return ()=>sel;
+}
+function stepper(menos, mais, out, min, max, passo, fmt, onChange){
+  let v=min; const upd=()=>{out.value=fmt(v); out.textContent=fmt(v); menos.disabled=v<=min; onChange(v);};
+  menos.onclick=()=>{v=Math.max(min,v-passo);upd();}; mais.onclick=()=>{v=Math.min(max,v+passo);upd();};
+  return {get:()=>v, upd};
+}
+// ===== Compra direto no site =====
+// MODO "whatsapp": o pedido vai pronto para o WhatsApp. MODO "pix": checkout InfinitePay (precisa do servidor, ainda não ligado).
+const MODO = "whatsapp";
+if(MODO==="pix"){ $("gemasTxt").textContent="Escolha a faixa da sua conta e a quantidade, cole a localização do castelo e pague com Pix aqui mesmo. A entrega em guilda pública começa sozinha assim que o pagamento é confirmado."; $("cPagar").textContent="Pagar com Pix"; $("cNota").innerHTML="Pagamento <b>somente via Pix</b>. A entrega começa sozinha assim que o Pix é confirmado."; }
+const LOC_RE = /^\s*\[([^\]]+)\]\s*(.+?)\s+K:(\d+)\s+X:(\d+)\s+Y:(\d+)\s*$/;
+let compraAtual = null;
+function poeCompra(slot, pedido){
+  const b=el("button","btn pix",MODO==="pix"?"Comprar com Pix":"Fazer pedido"); b.type="button";
+  b.onclick=()=>abrirCompra(pedido); slot.replaceChildren(b);
+}
+function faixaReino(txt){ const n=(txt||"").match(/\d+/g)||[]; return n.length>=2?[+n[0],+n[1]]:null; }
+function abrirCompra(pedido){
+  compraAtual=pedido;
+  $("cTitulo").textContent=pedido.titulo; $("cDetalhe").textContent=pedido.detalhe; $("cTotal").textContent=R(pedido.total);
+  $("cLoc").value=""; $("cOk").checked=false; $("cPassos").hidden=false; $("cFim").hidden=true; validaCompra();
+  $("compra").hidden=false; document.body.classList.add("travado"); $("cLoc").focus();
+}
+function fecharCompra(){ $("compra").hidden=true; if($("album").hidden && $("lb").hidden) document.body.classList.remove("travado"); }
+function validaCompra(){
+  const v=$("cLoc").value, m=v.match(LOC_RE); let erro="";
+  if(v.trim() && !m) erro="Formato inválido. Cole o texto copiado do jogo: [TAG]Nome K:1446 X:123 Y:111";
+  else if(m && compraAtual && compraAtual.reino){
+    const f=faixaReino(compraAtual.reino), k=+m[3];
+    if(f && (k<f[0]||k>f[1])) erro="Seu reino é K"+k+", mas o pacote escolhido é para "+compraAtual.reino+". Volte e escolha o reino certo.";
+  }
+  $("cMsg").textContent = erro || (m ? "✓ Guilda "+m[1]+" · "+m[2]+" · K"+m[3]+" X"+m[4]+" Y"+m[5] : "");
+  $("cMsg").className = "cmsg"+(erro?" erro":(m?" ok":""));
+  $("cPagar").disabled = !(m && !erro && $("cOk").checked);
+}
+function pagarCompra(){
+  if(MODO==="whatsapp"){ const loc=$("cLoc").value.trim();
+    window.open(waLink(["Oi! Quero fazer um pedido pelo site:", "", "• "+compraAtual.titulo, "• "+compraAtual.detalhe, "• Total: "+R(compraAtual.total), "",
+      "Localização: "+loc, "", "Já conferi os requisitos (guilda pública, espaço livre, longe do Wonder)."].join("\n")),"_blank","noopener");
+    fecharCompra(); return; }
+  // No site real: o servidor cria o link de pagamento na InfinitePay e leva o cliente para lá.
+  $("cPassos").hidden=true; $("cFim").hidden=false;
+}
+$("cLoc").addEventListener("input",validaCompra); $("cOk").addEventListener("change",validaCompra);
+$("cPagar").onclick=pagarCompra; $("cFechar").onclick=fecharCompra; $("cVoltar").onclick=fecharCompra;
+$("compra").addEventListener("click",e=>{if(e.target.id==="compra")fecharCompra();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("compra").hidden)fecharCompra();});
+
+function poeWa(slot, texto, rotulo){ slot.replaceChildren(waBtnTxt(texto, rotulo||"Pedir no WhatsApp")); }
+function waBtnTxt(texto, rotulo){const w=el("a","btn wa"); w.href=waLink(texto); w.target="_blank"; w.rel="noopener"; w.insertAdjacentHTML("afterbegin",WA_SVG); w.append(rotulo); return w;}
+
+// Gemas: abaixo de 1M cobra por 100K; de 1M para cima cobra por 1M
+(function(){
+  const g=PRODUTOS.filter(p=>p.cat==="Gemas"), faixas=[...new Set(g.map(p=>p.faixa))];
+  const p100=f=>g.find(p=>p.faixa===f && /100K/i.test(p.unid))?.preco, p1m=f=>g.find(p=>p.faixa===f && /1M/i.test(p.unid))?.preco;
+  const fmtQ=k=>k<1000? k+"K" : (k/1000).toLocaleString("pt-BR",{maximumFractionDigits:1})+"M";
+  // de 100K em 100K (100K a 900K) e de 1M em 1M, cada um com o preço da sua tabela
+  function calculadora(px, preco, min, max, passo, nomeUnid, brindeK){
+    let qtd; const faixa=segmento($(px+"Faixa"), faixas.map(f=>f.replace("Poder ","")), ()=>calc());
+    function calc(){const f=faixas[faixa()], k=qtd.get(), total=k/passo*preco(f), brinde=brindeK && k>=brindeK;
+      $(px+"Total").textContent=R(total); $(px+"Obs").textContent=R(preco(f))+" a cada "+nomeUnid+(brinde?" · + Full Bank de brinde":"");
+      poeCompra($(px+"Wa"), {titulo: fmtQ(k)+" de gemas"+(brinde?" + Full Bank de brinde":""), detalhe: "Conta com "+f.replace("Poder ","poder "), total});}
+    qtd=stepper($(px+"Menos"),$(px+"Mais"),$(px+"Qtd"),min,max,passo,fmtQ,calc); qtd.upd();
+  }
+  calculadora("g", p100, 100, 900, 100, "100K");
+  calculadora("m", p1m, 1000, 50000, 1000, "1M", 2000);
+})();
+
+// Full Bank e Meio Bank: preço pelo reino
+function banco(px, nome, cada){
+  const r=PRODUTOS.filter(p=>p.cat==="Recursos" && p.prod.startsWith(nome)); if(!r.length) return;
+  const faixas=r.map(p=>p.faixa); let qtd;
+  const faixa=segmento($(px+"Faixa"), faixas, ()=>calc());
+  function calc(){const p=r[faixa()], n=qtd.get(), total=n*p.preco; $(px+"Total").textContent=R(total); $(px+"Obs").textContent=R(p.preco)+" cada "+cada;
+    poeCompra($(px+"Wa"), {titulo: n+"× "+p.prod, detalhe: "Reino "+p.faixa, total, reino: p.faixa});}
+  qtd=stepper($(px+"Menos"),$(px+"Mais"),$(px+"Qtd"),1,100,1,n=>String(n),calc); qtd.upd();
+}
+banco("r","Full Bank","full bank");
+banco("h","Quase Full","quase full");
+
+// Falcon Bot
+(function(){
+  const f=PRODUTOS.filter(p=>p.cat==="Bot Scan");
+  $("fPlanos").replaceChildren(...f.map(p=>{const c=el("div","plan"+(p.dest?" dest":"")); const nome=p.prod.replace(/^Falcon Bot /,"");
+    if(p.dest) c.append(el("span","flag",p.dest));
+    const pr=el("div","preco",R(p.preco).replace(",00","")); pr.append(el("small",null," /mês"));
+    c.append(el("div","nome",nome), el("div","vel",p.faixa.replace("Atualiza a cada ","atualiza a cada ")), pr);
+    if(p.desc){const ex=el("div","extras"); p.desc.split("·").map(s=>s.trim()).filter(Boolean).forEach(s=>ex.append(el("div","extra"+(/grátis/i.test(s)?" free":""),s))); c.append(ex);}
+    c.append(waBtnTxt("Oi! Quero o Falcon Bot "+nome+" ("+p.faixa.toLowerCase()+"), "+R(p.preco)+" por mês.","Assinar"));
+    return c;}));
+  $("fKvk").append(el("b",null,"Opção de KvK: "),"são três grupos, cada um mostrando um reino, com todas as atividades que acontecem nele.");
+})();
+
+// Bot Farm: preço por conta, conforme o período
+(function(){
+  const b=PRODUTOS.filter(p=>p.cat==="Bot Farm"), meses=p=>parseInt(p.faixa)||1; let qtd;
+  const per=segmento($("bPer"), b.map(p=>p.faixa+(p.dest?" ★":"")), ()=>calc());
+  function calc(){const p=b[per()], n=qtd.get(), total=n*p.preco;
+    $("bTotal").textContent=R(total); $("bObs").textContent=R(p.preco)+" por conta · sai "+R(p.preco/meses(p))+" por mês";
+    poeWa($("bWa"), "Oi! Quero o Bot Farm para "+n+(n>1?" contas":" conta")+", plano de "+p.faixa+". Total "+R(total)+".");}
+  qtd=stepper($("bMenos"),$("bMais"),$("bQtd"),1,200,1,n=>n+(n>1?" contas":" conta"),calc); qtd.upd();
+})();
+
+// banners em tela cheia
+</script>
+
+</html>
